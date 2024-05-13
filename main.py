@@ -19,6 +19,7 @@ def findPaths(words):
     for w in words:
         current_word += w
         var, path = getPath(current_word)
+        # print(f"var: {var}, path: {path}, current_word: {current_word}")
 
         if not var:
             current_word += "_"
@@ -47,6 +48,8 @@ def __main__():
     prompt = input("Enter prompt to synthesis: ")
     # prompt = ("Pociag ze stacji Warszawa Wschodnia do stacji Poznan Glowny przez stacje Kutno, Konin odjedzie z toru "
     #           "drugiego przy peronie trzecim.")
+    # prompt = ("Pociag do stacji Bialogard ze stacji Bydgoszcz Lesna przez stacje Babiak, Augustow, bedzin Miasto "
+    #           "odjedzie z toru szostego przy peronie trzecim.")
     prompt = prompt.replace(".", "").replace(",", "").replace(":", "").lower()
     words = prompt.split(" ")
     files = findPaths(words)
